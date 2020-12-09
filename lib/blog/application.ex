@@ -10,6 +10,7 @@ defmodule Blog.Application do
     children = [
       # Starts a worker by calling: Blog.Worker.start_link(arg)
       # {Blog.Worker, arg}
+      {Plug.Cowboy, scheme: :http, plug: Blog.Plug, options: [port: 8080]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
